@@ -6,86 +6,86 @@ using namespace std;
 int randInt(int max){
     return rand()%(max+1);
 }
-void writeCommendToFile(int num,ofstream &plik){
+void writeCommendToFile(int num,ofstream &file){
     static int actualCH=0;
     switch(num){
         case 0:
         {
-            plik<<"IH "<<randInt(9)<<endl;
+            file<<"IH "<<randInt(9)<<endl;
             return;
         }
         case 1:case 2:case 3:
         {
-            plik<<"IH "<<randInt(9)<<endl;
+            file<<"IH "<<randInt(9)<<endl;
             return;
         }
         case 4:
         {
-            plik<<"DH"<<endl;
+            file<<"DH"<<endl;
             return;
         }
         case 5: case 6: case 7:
         {
-            plik<<"IT "<<randInt(9)<<endl;
+            file<<"IT "<<randInt(9)<<endl;
             return;
         }
         case 8:
         {
-            plik<<"DT"<<endl;
+            file<<"DT"<<endl;
             return;
         }
         case 9:
         {
-            plik<<"FV "<<randInt(9)<<endl;
+            file<<"FV "<<randInt(9)<<endl;
             return;
         }
         case 10:
         {
-            plik<<"RV "<<randInt(9)<<endl;
+            file<<"RV "<<randInt(9)<<endl;
             return;
         }
         case 11:case 12:
         {
-            plik<<"AD "<<!actualCH<<endl;
+            file<<"AD "<<!actualCH<<endl;
             return;
         }
         case 17:
         {
-            plik<<"SH"<<endl;
+            file<<"SH"<<endl;
             return;
         }
         case 13:
         {
-            plik<<"ST"<<endl;
+            file<<"ST"<<endl;
             return;
         }
         case 14:
         {
-            plik<<"CL"<<endl;
+            file<<"CL"<<endl;
             return;
         }
         case 15:case 16:
         {
             actualCH=!actualCH;
-            plik<<"CH "<<actualCH<<endl;;
+            file<<"CH "<<actualCH<<endl;;
             return;
         }
     }
 }
 int main() {
     srand((unsigned)time(0));
-    ofstream plik;
-    plik.open("tester.txt");
-    if(!plik.is_open()){
+    ofstream file;
+    file.open("tester.txt");
+    if(!file.is_open()){
         cout<<"error opening file\n";
         return 1;
     }
 
-    plik<< "GO 2\n" << "CH 0\n"<< "IN\n" << "CH 1\n"<< "IN\n"<< "CH 0\n";
+    file<< "GO 2\n" << "CH 0\n"<< "IN\n" << "CH 1\n"<< "IN\n"<< "CH 0\n";
     for(int i=0;i<1'000'000;++i){
-        writeCommendToFile(randInt(17),plik);
+        writeCommendToFile(randInt(17),file);
     }
-    plik<<"HA\n"<<endl;
-    plik.close();
+    file<<"HA\n"<<endl;
+    file.close();
     return 0;
 }
