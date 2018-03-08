@@ -54,8 +54,6 @@ void show(Queue& q) {
     cout << endl;
 }
 
-
-
 void showBool(bool val) {
     if (val)
         cout << "true" << endl;
