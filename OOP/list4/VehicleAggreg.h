@@ -44,6 +44,6 @@ public:
     void displayNumOfWindows();
 };
 
-1////////
+////////
 
 #endif //LIST4_VEHICLEAGGREG_H
