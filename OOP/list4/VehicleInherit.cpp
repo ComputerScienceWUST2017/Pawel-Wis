@@ -6,8 +6,8 @@
 #include <iomanip>
 #include "VehicleInherit.h"
 
-VehicleInherit::VehicleInherit(float mxFuel, float fUsPer100, int hp) : maxFuel(mxFuel), fuelUsagePer100(fUsPer100),
-                                                                        horsepower(hp),
+VehicleInherit::VehicleInherit(float mxFuel, float fUsPer100, int hp) : horsepower(hp),maxFuel(mxFuel), 
+									fuelUsagePer100(fUsPer100),
                                                                         currentFuel(mxFuel) {}
 
 

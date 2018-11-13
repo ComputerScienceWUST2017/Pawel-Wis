@@ -9,7 +9,7 @@
 class VehicleInherit {
 protected:
     int horsepower;
-    float maxFuel, currentFuel, fuelUsagePer100;
+    float maxFuel, fuelUsagePer100, currentFuel;
 
     float min(float a, float b);
 
