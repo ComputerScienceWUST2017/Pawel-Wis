@@ -11,10 +11,10 @@
 class Rectangle {
 protected:
     float a,b;
+    virtual float area(float,float);
 public:
     Rectangle();
     Rectangle(float,float);
-    virtual float area(float,float);
     virtual float area();
     virtual float diagonal();
     virtual ~Rectangle();
