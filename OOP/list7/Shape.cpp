@@ -52,7 +52,6 @@ void Rectangle::draw(){
     cout<<endl;
   }
 }
-
 IsoscelesTriangle::IsoscelesTriangle(float a, int x, int y):TwoDimensionalShape(a,a,x,y){};
 
 float IsoscelesTriangle::area(){
@@ -86,6 +85,33 @@ void Parallelogram::draw(){
     for(int k=0;k<this->width;++k){
       cout<<"X";
     }
+    cout<<endl;
+  }
+}
+
+ChristmasTree::ChristmasTree(float a, int x, int y):TwoDimensionalShape(a,a,x,y), totalArea(0){};
+
+float ChristmasTree::area(){
+  return this->totalArea;
+}
+
+void ChristmasTree::draw(){
+  offsetY();
+  for(int i=0;i<this->height;++i){
+    this->drawPartialTree(i,this->height-1-i);
+  }
+}
+
+void ChristmasTree::drawPartialTree(int levels,int offset){
+  for(int i=0;i<levels;++i){
+    offsetX();
+    for(int j=levels-1+offset;j>i;--j){
+      cout<<" ";
+    }
+    for(int k=0;k<i*2+1;++k){
+      cout<<"X";
+    }
+    this->totalArea+=i*2+1;
     cout<<endl;
   }
 }

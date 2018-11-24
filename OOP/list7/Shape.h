@@ -3,7 +3,7 @@
 using namespace std;
 
 class Shape{
-public:
+ public:
   Shape(float a, float b, int x, int y);
   float width,height;
   int x,y;
@@ -14,7 +14,7 @@ public:
 };
 
 class ThreeDimensionalShape: public Shape{
-public:
+ public:
   ThreeDimensionalShape(float a, float b, float c, int x, int y);
   float depth;
   virtual float volume()=0;
@@ -23,7 +23,7 @@ public:
 };
 
 class TwoDimensionalShape: public Shape{
-public:
+ public:
   TwoDimensionalShape(float a, float b, int x, int y);
   float area()=0;
   void draw()=0;
@@ -57,4 +57,13 @@ class Parallelogram: public TwoDimensionalShape{
     void draw() override;
 };
 
+class ChristmasTree: public TwoDimensionalShape{
+  float partialArea();
+  float totalArea;
+  public:
+    ChristmasTree(float a, int x, int y);
+    void drawPartialTree(int levels,int offset);
+    float area() override;
+    void draw() override;
+};
 #endif
