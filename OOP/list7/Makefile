@@ -1,5 +1,5 @@
 CC = g++
-FLAGS = -c -Wall
+FLAGS = -c -Wall -Wextra
 
 all: go
 

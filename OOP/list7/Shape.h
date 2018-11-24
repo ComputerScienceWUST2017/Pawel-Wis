@@ -4,9 +4,9 @@ using namespace std;
 
 class Shape{
  public:
-  Shape(float a, float b, int x, int y);
-  float width,height;
-  int x,y;
+  Shape(int a, int b, int x, int y);
+  virtual ~Shape();
+  int width,height,x,y;
   virtual float area()=0;
   virtual void draw()=0;
   void offsetX();
@@ -15,8 +15,9 @@ class Shape{
 
 class ThreeDimensionalShape: public Shape{
  public:
-  ThreeDimensionalShape(float a, float b, float c, int x, int y);
-  float depth;
+  ThreeDimensionalShape(int a, int b, int c, int x, int y);
+  ~ThreeDimensionalShape() override;
+  int depth;
   virtual float volume()=0;
   float area()=0;
   void draw()=0;
@@ -24,45 +25,50 @@ class ThreeDimensionalShape: public Shape{
 
 class TwoDimensionalShape: public Shape{
  public:
-  TwoDimensionalShape(float a, float b, int x, int y);
+  TwoDimensionalShape(int a, int b, int x, int y);
+  ~TwoDimensionalShape() override;
   float area()=0;
   void draw()=0;
 };
 
 class Square: public TwoDimensionalShape{
   public:
-    Square(float a, int x, int y);
+    Square(int a, int x, int y);
+    ~Square() override;
     float area() override;
     void draw() override;
 };
 
 class Rectangle: public TwoDimensionalShape{
   public:
-    Rectangle(float a, float b, int x, int y);
+    Rectangle(int a, int b, int x, int y);
+    ~Rectangle() override;
     float area() override;
     void draw() override;
 };
 
 class IsoscelesTriangle: public TwoDimensionalShape{
   public:
-    IsoscelesTriangle(float a, int x, int y);
+    IsoscelesTriangle(int a, int x, int y);
+    ~IsoscelesTriangle() override;
     float area() override;
     void draw() override;
 };
 
 class Parallelogram: public TwoDimensionalShape{
   public:
-    Parallelogram(float a, float b, int x, int y);
+    Parallelogram(int a, int b, int x, int y);
+    ~Parallelogram() override;
     float area() override;
     void draw() override;
 };
 
 class ChristmasTree: public TwoDimensionalShape{
+  void drawPartialTree(int levels,int offset);
   float partialArea();
-  float totalArea;
   public:
-    ChristmasTree(float a, int x, int y);
-    void drawPartialTree(int levels,int offset);
+    ChristmasTree(int a, int x, int y);
+    ~ChristmasTree() override;
     float area() override;
     void draw() override;
 };
