@@ -16,7 +16,6 @@ public:
 
     VehicleVirtual(float, float);
 
-
     void tank();
 
     void drive();
@@ -44,7 +43,7 @@ public:
     void displayNumbOfSails();
 };
 
-class AmphibiousVirtual : virtual public CarVirtual, virtual public BoatVirtual {
+class AmphibiousVirtual : public CarVirtual, public BoatVirtual {
 public:
     AmphibiousVirtual(float, float, int, int);
 

@@ -44,7 +44,7 @@ int main() {
                 delete ptr;
                 ptr = new Rectangle(a, b);
                 break;
-            } 
+            }
             case 2: {
                 int a, b, c;
                 cout << "Enter the dimensions of the Cuboid: ";
@@ -83,23 +83,12 @@ int main() {
     cout << "\nARABIAN\n" << endl;
 
     ArabianNumbers *number = new ArabianNumbers(15);
-    number->printNum();
-    number = new ArabianNumbers(3);
-    number->printNum();
-    number = new ArabianNumbers(1502);
-    number->printNum();
-    number = new ArabianNumbers(3338);
+    number = new ArabianNumbers(494);
     number->printNum();
 
     cout << "\nROMAN\n" << endl;
 
-    number = new RomanNumbers(15);
-    number->printNum();
-    number = new RomanNumbers(3);
-    number->printNum();
-    number = new RomanNumbers(1502);
-    number->printNum();
-    number = new RomanNumbers(3338);
+    number = new RomanNumbers(494);
     number->printNum();
     return 0;
 }

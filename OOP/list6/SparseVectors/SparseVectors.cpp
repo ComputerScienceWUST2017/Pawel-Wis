@@ -50,7 +50,7 @@ float SparseVectors::getScalarProduct(SparseVectors *sec) {
     float sum = 0;
     int iValThis = 0, iValSec = 0;
 
-    for(int i = 0;i<this->orderVec.size();++i){
+    for(int i = 0;i<(int)this->orderVec.size();++i){
         if(this->orderVec[i] == true && sec->orderVec[i] == true){
             sum += this->valueVec[iValThis] * sec->valueVec[iValSec];
             ++iValSec;
@@ -65,4 +65,3 @@ float SparseVectors::getScalarProduct(SparseVectors *sec) {
     }
     return sum;
 }
-
