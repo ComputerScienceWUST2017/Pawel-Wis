@@ -1,0 +1,20 @@
+CC = g++
+FLAGS = -c -Wall
+
+all: go
+
+go: main.o shape.o twoDimShape.o threeDimShape.o
+	$(CC) main.o shape.o twoDimShape.o threeDimShape.o -o a.out
+	rm *.o *.gch
+
+main.o:	main.cpp
+	$(CC) $(FLAGS) main.cpp
+
+shape.o: Shape.h Shape.cpp
+	$(CC) $(FLAGS) Shape.h Shape.cpp
+
+twoDimShape.o: TwoDimensionalShape.h TwoDimensionalShape.cpp
+	$(CC) $(FLAGS) TwoDimensionalShape.h TwoDimensionalShape.cpp
+
+threeDimShape.o: ThreeDimensionalShape.h ThreeDimensionalShape.cpp
+	$(CC) $(FLAGS) ThreeDimensionalShape.h ThreeDimensionalShape.cpp
