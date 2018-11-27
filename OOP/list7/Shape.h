@@ -19,16 +19,12 @@ class ThreeDimensionalShape: public Shape{
   ~ThreeDimensionalShape() override;
   int depth;
   virtual float volume()=0;
-  float area()=0;
-  void draw()=0;
 };
 
 class TwoDimensionalShape: public Shape{
  public:
   TwoDimensionalShape(int a, int b, int x, int y);
   ~TwoDimensionalShape() override;
-  float area()=0;
-  void draw()=0;
 };
 
 class Square: public TwoDimensionalShape{
